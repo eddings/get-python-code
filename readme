@@ -30,3 +30,11 @@ Papers with Code (paperswithcode.py):
 "Retrieves all papers tagged with "Python" on Papers with Code, saves their metadata to an IBM DB2 database, and also downloads and saves their associated code files in a separate table called papers_code_files."
 
 "Retrieves the associated code files for each paper, saves them to a papers_code_files table in the same database, and links them to the corresponding paper using the paper_id foreign key. Note that you will need to create the papers_code_files table in your IBM DB2 database with columns paper_id (foreign key to papers table), filename, and content before running this code."
+
+Google Scholar (googlescholar.py):
+
+"Unfortunately, Google Scholar does not provide an official API for programmatic access to their search results. As a result, any code that scrapes their website could potentially violate their terms of service.
+
+However, there are some third-party libraries that provide a Python interface to Google Scholar, such as scholarly (https://github.com/scholarly-python-package/scholarly). You can use this library to search for papers and retrieve their metadata.
+
+Here's an example Python code that uses scholarly to search for papers with the keyword "Python" and saves their metadata to an IBM DB2 database."
