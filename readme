@@ -47,4 +47,6 @@ Website (website.py):
 
 Kaggle / Jupyter (ipynb.py):
 
+"Use the Kaggle API to download the Kaggle notebooks. For example, you can download all the notebooks in the "python" category by running !kaggle datasets download -d stack-exchange/python -p /path/to/download/folder in your terminal or command prompt. This will download the notebooks as .zip files to the specified folder."
+
 "This code will extract all of the Python code cells from the Kaggle notebooks in the specified download folder and save them to an IBM DB2 database. You can modify the code to customize the SQL query, change the database connection details, or process the notebooks in a different way."
