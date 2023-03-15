@@ -28,3 +28,5 @@ For Github Gist (gists.py):
 Papers with Code (paperswithcode.py):
 
 "Retrieves all papers tagged with "Python" on Papers with Code, saves their metadata to an IBM DB2 database, and also downloads and saves their associated code files in a separate table called papers_code_files."
+
+"Retrieves the associated code files for each paper, saves them to a papers_code_files table in the same database, and links them to the corresponding paper using the paper_id foreign key. Note that you will need to create the papers_code_files table in your IBM DB2 database with columns paper_id (foreign key to papers table), filename, and content before running this code."
