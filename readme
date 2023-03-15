@@ -2,10 +2,14 @@ Code for getting Python repositories from Github and saving to a SQL database (s
 
 Code generated with ChatGPT.  Not yet tested.
 
-Description by ChatGPT:
+Description by ChatGPT for the Github API code:
 
 "Here's a combined version of the code that retrieves all Python repositories on GitHub, retrieves the code for each repository along with its metadata, and stores each file in the repository separately."
 
 "This code retrieves the list of all Python repositories on GitHub sorted by stars, saves each repository's metadata to a repositories table, retrieves all the Python files in each repository, and saves each file's metadata and contents to a files table. Note that this code assumes that the repositories table has a column called name of type VARCHAR or TEXT to store the name of each repository, a column called url of type VARCHAR or TEXT to store the URL of each repository, and a column called stars of type INTEGER to store the number of stars each repository has. If your table has a different schema, you will need to modify the SQL statements in the ibm_db.prepare functions accordingly. Similarly, this code assumes that the files table has a column called name of type VARCHAR or TEXT to store the name of each file, a column called content of type VARCHAR or TEXT to store the contents of each file, and a column called repository_id of type INTEGER to store the ID of the repository that the file belongs to. If your table has a different schema, you will need to modify the SQL statements in the ibm_db.prepare functions accordingly."
 
+
+Description by ChatGPT for the Stackoverflow API code (stackoverflow.py):
+
+"This code retrieves the list of all Python questions on Stack Overflow sorted by votes, saves each question's metadata to a questions table, retrieves all the code snippets in each question, and saves each snippet's metadata and content to a snippets table. Note that this code assumes that the questions table has a column called title of type VARCHAR or TEXT to store the title of each question, a column called url of type VARCHAR or TEXT to store the URL of each question, and a column called votes of type INTEGER to store the number of votes each question has. If your table has a different schema, you will need to modify the SQL statements in the ibm_db.prepare functions accordingly. Similarly, this code assumes that the snippets table has a column called code of type VARCHAR or TEXT to store the code of each snippet, and a column called question_id of type INTEGER to store the ID of the question that the snippet belongs to. If your table has a different schema, you will need to modify the SQL statements in the ibm_db.prepare functions accordingly."
 
