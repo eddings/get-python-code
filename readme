@@ -24,3 +24,7 @@ For Gitlab (gitlab.py):
 For Github Gist (gists.py): 
 
 "This code retrieves the list of all public Gists on GitHub, saves each Gist's metadata to a gists table, retrieves all the Python files in each Gist, and saves each file's metadata and content to a files table. Note that this code assumes that the gists table has a column called url of type VARCHAR or TEXT to store the URL of each Gist, a column called description of type VARCHAR or TEXT to store the description of each Gist, and a column called stars of type INTEGER to store the number of stars of each Gist. If your table has a different schema, you will need to modify the SQL statements in the ibm_db.prepare functions accordingly. Similarly, this code assumes that the files table has a column called name of type VARCHAR or TEXT to store the name of each file, a column called content of type VARCHAR or TEXT to store the content of each file, and a column called gist_id of type INTEGER to store the ID of the Gist that the file belongs to. If your table has a different schema, you will need to modify the SQL statements in the ibm_db.prepare functions accordingly. Note also that this code assumes that you have a personal access token for the GitHub API and that you have replaced <your_access_token> with your token."
+
+Papers with Code (paperswithcode.py):
+
+"etrieves all papers tagged with "Python" on Papers with Code, saves their metadata to an IBM DB2 database, and also downloads and saves their associated code files in a separate table called papers_code_files."
