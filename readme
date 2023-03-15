@@ -44,3 +44,7 @@ PDF files (pdf.py):
 Website (website.py):
 
 "This code should start by defining the domain to scrape, and then recursively follow links within the domain starting from the homepage. For each URL, it extracts Python code and metadata using regular expressions, and saves the details to an IBM DB2 database. Note that this code assumes that there is a table named WEBPAGE_DATA in the database with columns named URL, TITLE, DESCRIPTION, and CODE. You will need to modify the dsn_ variables to match your database connection details, and adjust the regular expression patterns to match the format of the Python code and metadata on the website."
+
+Kaggle / Jupyter (ipynb.py):
+
+"This code will extract all of the Python code cells from the Kaggle notebooks in the specified download folder and save them to an IBM DB2 database. You can modify the code to customize the SQL query, change the database connection details, or process the notebooks in a different way."
