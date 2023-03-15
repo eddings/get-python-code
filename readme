@@ -37,4 +37,6 @@ Google Scholar (googlescholar.py):
 
 PDF files (pdf.py):
 
+"To extract Python code from each PDF file in a directory and save it to an IBM DB2 database, you can use the pdfminer library to extract text from PDF files and the ibm_db library to connect to a DB2 database and insert data."
+
 "This code should extract text from each PDF file in a directory, extract Python code using a regular expression, and save the code to an IBM DB2 database. Note that this code assumes that there is a table named PYTHON_CODE in the database with a column named CODE. You will need to modify the dsn_ variables to match your database connection details, and adjust the regular expression pattern to match the format of the Python code in your PDF files."
