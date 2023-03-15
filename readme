@@ -33,8 +33,5 @@ Papers with Code (paperswithcode.py):
 
 Google Scholar (googlescholar.py):
 
-"Unfortunately, Google Scholar does not provide an official API for programmatic access to their search results. As a result, any code that scrapes their website could potentially violate their terms of service.
-
-However, there are some third-party libraries that provide a Python interface to Google Scholar, such as scholarly (https://github.com/scholarly-python-package/scholarly). You can use this library to search for papers and retrieve their metadata.
-
+"Unfortunately, Google Scholar does not provide an official API for programmatic access to their search results. As a result, any code that scrapes their website could potentially violate their terms of service. However, there are some third-party libraries that provide a Python interface to Google Scholar, such as scholarly (https://github.com/scholarly-python-package/scholarly). You can use this library to search for papers and retrieve their metadata.
 Here's an example Python code that uses scholarly to search for papers with the keyword "Python" and saves their metadata to an IBM DB2 database."
