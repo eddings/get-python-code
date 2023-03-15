@@ -23,11 +23,13 @@ dsn = (
 )
 conn = ibm_db.connect(dsn, "", "")
 
-# Define regular expression pattern to match Python code
+# Define regular expression patterns to match Python code and metadata
 python_pattern = re.compile(r"<pre class=\"brush: python;\">(.*?)</pre>", re.DOTALL)
+title_pattern = re.compile(r"<title>(.*?)</title>")
+description_pattern = re.compile(r'<meta name="description" content="(.*?)"')
 
-# Define function to extract Python code from URL and save to database
-def extract_python_code(url):
+# Define function to extract Python code and metadata from URL and save to database
+def extract_data(url):
     try:
         # Make HTTP request and parse HTML
         response = requests.get(url)
@@ -39,9 +41,15 @@ def extract_python_code(url):
         for match in python_matches:
             python_code.extend(python_pattern.findall(str(match)))
 
+        # Extract metadata from HTML using regular expressions
+        title_match = title_pattern.search(response.text)
+        title = title_match.group(1) if title_match else ""
+        description_match = description_pattern.search(response.text)
+        description = description_match.group(1) if description_match else ""
+
         # Save details to DB2 database
         for code in python_code:
-            ibm_db.exec_immediate(conn, f"INSERT INTO PYTHON_CODE (URL, CODE) VALUES ('{url}', '{code}')")
+            ibm_db.exec_immediate(conn, f"INSERT INTO WEBPAGE_DATA (URL, TITLE, DESCRIPTION, CODE) VALUES ('{url}', '{title}', '{description}', '{code}')")
     except Exception as e:
         print(f"Error extracting data from {url}: {e}")
 
@@ -50,14 +58,14 @@ def extract_python_code(url):
         link_url = urljoin(url, link["href"])
         parsed_url = urlparse(link_url)
         if parsed_url.netloc == domain and parsed_url.scheme == "https":
-            extract_python_code(link_url)
+            extract_data(link_url)
 
 # Define domain to scrape
 domain = "example.com"
 
 # Start scraping from homepage of domain
 homepage_url = f"https://{domain}"
-extract_python_code(homepage_url)
+extract_data(homepage_url)
 
 # Disconnect from DB2 database
 ibm_db.close(conn)
